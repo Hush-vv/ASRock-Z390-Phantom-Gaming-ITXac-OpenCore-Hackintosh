@@ -26,7 +26,7 @@
 
  - Advanced \ Chipset Configuration → Share Memory : 128MB
 
- -A dvanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
+ - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 
 
