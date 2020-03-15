@@ -18,6 +18,8 @@
 
 ## BIOS设置
 
+ - BIOS版本：V4.2
+
  - Advanced \ Chipset Configuration → Vt-d : Disabled
 
  - Advanced \ Super IO Configuration → Serial Port: Disabled
@@ -28,6 +30,15 @@
 
  - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
+## 说明
 
+ - 安装或更新系统时请使用“config-weg.plist”来安装或更新，否则会黑屏！
+ 
+ - 本EFI只针对我使用的显卡进行相关“优化”并不通用！
+ 
+ ## 其他大佬的EFI
+ 
+  - https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh
+  
 
 
