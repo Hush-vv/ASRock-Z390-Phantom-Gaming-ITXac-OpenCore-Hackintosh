@@ -38,7 +38,7 @@
  
  ## 其他大佬的EFI
  
-  - https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh
+  - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
   
 
 
