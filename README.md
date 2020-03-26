@@ -20,15 +20,15 @@
 
 - ### BIOS版本：V4.2
 
- - Advanced \ Chipset Configuration → Vt-d : Disabled
+  - Advanced \ Chipset Configuration → Vt-d : Disabled
 
- - Advanced \ Super IO Configuration → Serial Port: Disabled
+  - Advanced \ Super IO Configuration → Serial Port: Disabled
 
- - Advanced \ USB Configuration → XHCI Hand-off : Enabled
+  - Advanced \ USB Configuration → XHCI Hand-off : Enabled
 
- - Advanced \ Chipset Configuration → Share Memory : 128MB
+  - Advanced \ Chipset Configuration → Share Memory : 128MB
 
- - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
+  - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
 
 ## 说明
 
