@@ -18,7 +18,7 @@
 
 ## BIOS设置
 
- - BIOS版本：V4.2
+- ### BIOS版本：V4.2
 
  - Advanced \ Chipset Configuration → Vt-d : Disabled
 
