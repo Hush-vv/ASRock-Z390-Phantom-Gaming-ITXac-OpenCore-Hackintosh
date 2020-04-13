@@ -409,7 +409,7 @@
 			<key>HideVerbose</key>
 			<true/>
 			<key>JumpstartHotPlug</key>
-			<true/>
+			<false/>
 			<key>MinVersion</key>
 			<integer>0</integer>
 			<key>MinDate</key>
