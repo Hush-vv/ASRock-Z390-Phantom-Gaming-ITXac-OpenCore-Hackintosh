@@ -132,18 +132,6 @@
 				<key>TableSignature</key>
 				<data>U1NEVA==</data>
 			</dict>
-			<dict>
-				<key>All</key>
-				<false/>
-				<key>Comment</key>
-				<string>Drop XHC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>TableLength</key>
-				<integer>5346</integer>
-				<key>TableSignature</key>
-				<data>U1NEVA==</data>
-			</dict>
 		</array>
 	</dict>
 	<key>Booter</key>
