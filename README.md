@@ -33,7 +33,9 @@
 ## 说明
 
  - 使用OC-5700XT只针对我使用的显卡进行相关“优化”并不通用！
- 
+ - OC-5700XT下的SSDT-XHC-RHUB.aml是ACPI定制USB，无需重复定制USB端口。
+ - 其它显卡的直接使用“OC”即可，显卡相关优化请自行爬帖解决。
+ - SSDT-TbtOnPch.aml是用于支持Type C热拔插的，但是会导致ACPI Error开机变慢。
  
  ## 其他大佬的EFI
  
