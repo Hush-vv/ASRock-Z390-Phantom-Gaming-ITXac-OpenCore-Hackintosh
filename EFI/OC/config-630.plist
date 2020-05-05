@@ -40,12 +40,6 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-SBUS-MCHC.aml</string>
-			</dict>
-			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
 				<string>SSDT-TbtOnPch.aml</string>
 			</dict>
 		</array>
@@ -53,7 +47,8 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>GPRW to XPRW</string>
+				<string>GPRW to XPRW
+</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
@@ -233,7 +228,7 @@
 				<key>BundlePath</key>
 				<string>NVMeFix.kext</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/NVMeFix</string>
 				<key>PlistPath</key>
@@ -263,34 +258,6 @@
 				<string></string>
 				<key>MinKernel</key>
 				<string>19.0.0</string>
-				<key>Replace</key>
-				<data>ww==</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>Base</key>
-				<string>__ZN8AppleRTC14updateChecksumEv</string>
-				<key>Comment</key>
-				<string>Disable RTC checksum update on poweroff</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data></data>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleRTC</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
 				<key>Replace</key>
 				<data>ww==</data>
 				<key>ReplaceMask</key>
@@ -338,6 +305,10 @@
 	<dict>
 		<key>Add</key>
 		<dict>
+			<key>#4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+			<array>
+				<string>rtc-blacklist</string>
+			</array>
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>DefaultBackgroundColor</key>
@@ -357,20 +328,22 @@
 		</dict>
 		<key>Block</key>
 		<dict>
+			<key>#4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+			<array>
+				<string>rtc-blacklist</string>
+			</array>
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
-			<dict>
-				<key>DefaultBackgroundColor</key>
-				<data>AAAAAA==</data>
-				<key>UIScale</key>
-				<data>AQ==</data>
-			</dict>
+			<array>
+				<string>UIScale</string>
+				<string>DefaultBackgroundColor</string>
+			</array>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
 				<string>boot-args</string>
 			</array>
 		</dict>
 		<key>WriteFlash</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -379,17 +352,17 @@
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string></string>
+			<string>C02929108J9LNV91H</string>
 			<key>ROM</key>
-			<data></data>
+			<data>FDb2IL6O</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
 			<string>iMac19,1</string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>C02Z30PKJV3Q</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>F8FE04E8-FB85-4610-8BED-95339520BE8E</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
