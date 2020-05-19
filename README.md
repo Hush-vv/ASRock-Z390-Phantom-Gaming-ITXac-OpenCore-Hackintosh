@@ -63,6 +63,7 @@
 - `TB3`接口将`ACPI`-`Add`-`ltem5`-`Enabled`=`YES`或者`ACPI`-`Add`-`ltem6`-`Enabled`=`YES`即可支持热拔插
   
   - 详细驱动教程请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/) 
+  - 存在的问题：睡眠唤醒失败电脑自动重启提示`thunderbolt power on failed`
 
  ## `fangf`大佬的EFI
  
