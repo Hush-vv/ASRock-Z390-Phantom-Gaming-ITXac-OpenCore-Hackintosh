@@ -585,6 +585,8 @@
 		<dict>
 			<key>RequestBootVarRouting</key>
 			<true/>
+			<key>TscSyncTimeout</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>
