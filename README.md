@@ -10,7 +10,7 @@
 |处理器|英特尔 酷睿 i9-9900k|
 |内存|芝奇 16GBx2 3200Mhz C16|
 |硬盘| 西数 SN750 1T |
-|显卡|蓝宝石 5700XT 超白金|
+|显卡| XFX Radeon VII |
 |显示器|优派 VX2780-4K-ZERO|
 |声卡| Realtek ALC1220|
 |网卡| 94360CS2|
@@ -40,7 +40,7 @@
   
 ### 配置`config`【重要】
 
-- 如果你的显卡是`AMD 5700XT`请按照以下设置即可达到相关的“优化”（更新或安装系统时请按照以下设置，否则会黑屏）
+- `5700XT`相关“优化”（更新或安装系统时请按照以下设置，否则会黑屏）
 
   - `ACPI`-`Add`-`ltem3`-`Enabled`=`YES`
   - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
@@ -58,10 +58,35 @@
   - `Kernel`-`Patch`-`ltem0`-`Enabled`=`YES`
   - 删除 `agdpmod=pikera`  
   
+- `Radeon VII`相关“优化”（更新或安装系统时请按照以下设置，否则会黑屏）
+
+  - `ACPI`-`Add`-`ltem2`-`Enabled`=`YES`
+  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
+  - `Kernel`-`Add`-`ltem4`-`Enabled`=`YES`
+  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`NO`
+  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`NO`
+  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`NO`
+  - 并将`EFI`文件夹下的`WhateverGreen.kext`（59kb）替换掉OC-Kexts文件夹下的`WhateverGreen.kext`
+  - `WhateverGreen.kext`（59kb）请勿更新，这是一个定制版本 
+   
+- `Radeon VII`正常使用时可以按照以下设置来达到不使用`WhateverGreen.kext`的目的
+
+  - `ACPI`-`Add`-`ltem2`-`Enabled`=`YES`
+  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
+  - `Kernel`-`Add`-`ltem4`-`Enabled`=`NO`
+  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`YES`
+  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`YES`
+  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`YES`
+  - 使用`Hackintool`工具`重建缓存并修复权限`
+
 - 其它显卡按默认使用即可，如果想做优化请自行爬帖
   
-- `TB3`接口将`ACPI`-`Add`-`ltem5`-`Enabled`=`YES`或者`ACPI`-`Add`-`ltem6`-`Enabled`=`YES`即可支持热拔插
-  
+- 驱动 `TB3`接口支持热拔插
+
+  - `ACPI`-`Add`-`ltem5`-`Enabled`=`YES`
+  - `ACPI`-`Add`-`ltem6`-`Enabled`=`YES`或者`ACPI`-`Add`-`ltem7`-`Enabled`=`YES`
+  - `ACPI`-`Patch`-`ltem3`-`Enabled`=`YES`
+    
   - 详细驱动教程请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/) 
   - 存在的问题：睡眠唤醒失败电脑自动重启提示`thunderbolt power on failed`
 

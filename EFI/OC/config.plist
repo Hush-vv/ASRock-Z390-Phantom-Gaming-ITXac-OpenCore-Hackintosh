@@ -10,12 +10,6 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-DTPG.aml</string>
-			</dict>
-			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
 				<string>SSDT-PR00-Performance.aml</string>
 			</dict>
 			<dict>
@@ -28,13 +22,25 @@
 				<key>Enabled</key>
 				<false/>
 				<key>Path</key>
-				<string>SSDT-AMD-Z390-RX5700XT-Graphics-Built-in.aml</string>
+				<string>SSDT-AMD Radeon Pro VII.aml</string>
+			</dict>
+			<dict>
+				<key>Enabled</key>
+				<false/>
+				<key>Path</key>
+				<string>SSDT-AMD-RX5700XT.aml</string>
 			</dict>
 			<dict>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-XHC-USB.aml</string>
+			</dict>
+			<dict>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-DTPG.aml</string>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -110,7 +116,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>R0ZYMA==</data>
 				<key>Limit</key>
