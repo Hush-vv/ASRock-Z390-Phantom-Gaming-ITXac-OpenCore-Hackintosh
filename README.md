@@ -64,8 +64,9 @@
   - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
   - `Kernel`-`Add`-`ltem4`-`Enabled`=`YES`
   - `Kernel`-`Patch`-`ltem0`-`Enabled`=`NO`
-  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`NO`
-  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`NO`
+  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`YES`
+  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`YES`
+  - 使用`Hackintool`工具`重建缓存并修复权限`
   - 并将`EFI`文件夹下的`WhateverGreen.kext`（59kb）替换掉OC-Kexts文件夹下的`WhateverGreen.kext`
   - `WhateverGreen.kext`（59kb）请勿更新，这是一个定制版本 
    
