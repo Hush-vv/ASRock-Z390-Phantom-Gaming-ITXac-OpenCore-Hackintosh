@@ -1,6 +1,8 @@
 # ASRock-Z390-Phantom-Gaming-ITXac-OpenCore-Hackintosh
 
 
+### 支持macOS Big Sur由于电脑不在身边未测试，更新系统时请备份（文件来自笔记本移植，笔记本已经支持ota到macOS Big beta2）
+
 
 ## 电脑配置
 |规格 | 详细信息|
@@ -36,52 +38,7 @@
  : Enabled  
   
   - 没有的选项跳过即可
-  
-  
-### 配置`config`【重要】
-
-- `5700XT`相关“优化”（更新或安装系统时请按照以下设置，否则会黑屏）
-
-  - `ACPI`-`Add`-`ltem3`-`Enabled`=`YES`
-  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - `Kernel`-`Add`-`ltem4`-`Enabled`=`YES`
-  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`NO`
-  - `NVRAM` \ `Add` \ `7C436110-AB2A-4BBB-A880-FE41995C9F82` \ `boot-args` \ `agdpmod=pikera`  
-  - 并将`EFI`文件夹下的`WhateverGreen.kext`（59kb）替换掉OC-Kexts文件夹下的`WhateverGreen.kext`
-  - `WhateverGreen.kext`（59kb）请勿更新，这是一个定制版本 
- 
-- `AMD 5700XT`正常使用时可以按照以下设置来达到不使用`WhateverGreen.kext`的目的
-
-  - `ACPI`-`Add`-`ltem3`-`Enabled`=`YES`
-  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - `Kernel`-`Add`-`ltem4`-`Enabled`=`NO`
-  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`YES`
-  - 删除 `agdpmod=pikera`  
-  
-- `Radeon VII`相关“优化”（更新或安装系统时请按照以下设置，否则会黑屏）
-
-  - `ACPI`-`Add`-`ltem2`-`Enabled`=`YES`
-  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - `Kernel`-`Add`-`ltem4`-`Enabled`=`YES`
-  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`NO`
-  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`YES`
-  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - 使用`Hackintool`工具`重建缓存并修复权限`
-  - 并将`EFI`文件夹下的`WhateverGreen.kext`（59kb）替换掉OC-Kexts文件夹下的`WhateverGreen.kext`
-  - `WhateverGreen.kext`（59kb）请勿更新，这是一个定制版本 
-   
-- `Radeon VII`正常使用时可以按照以下设置来达到不使用`WhateverGreen.kext`的目的
-
-  - `ACPI`-`Add`-`ltem2`-`Enabled`=`YES`
-  - `ACPI`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - `Kernel`-`Add`-`ltem4`-`Enabled`=`NO`
-  - `Kernel`-`Patch`-`ltem0`-`Enabled`=`YES`
-  - `Kernel`-`Patch`-`ltem1`-`Enabled`=`YES`
-  - `Kernel`-`Patch`-`ltem2`-`Enabled`=`YES`
-  - 使用`Hackintool`工具`重建缓存并修复权限`
-
-- 其它显卡按默认使用即可，如果想做优化请自行爬帖
-  
+    
 - 驱动 `TB3`接口支持热拔插
 
   - `ACPI`-`Add`-`ltem5`-`Enabled`=`YES`
