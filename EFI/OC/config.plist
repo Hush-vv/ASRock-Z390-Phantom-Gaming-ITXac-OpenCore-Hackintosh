@@ -199,6 +199,12 @@
 			<true/>
 			<key>EnableWriteUnprotector</key>
 			<true/>
+			<key>ProvideCustomSlide</key>
+			<true/>
+			<key>SetupVirtualMap</key>
+			<true/>
+			<key>SyncRuntimePermissions</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
@@ -253,21 +259,33 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>VirtualSMC.kext/Contents/PlugIns/SMCProcessor.kext</string>
+				<string>SMCProcessor.kext</string>
+				<key>Comment</key>
+				<string>Prosessor</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCProcessor</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>VirtualSMC.kext/Contents/PlugIns/SMCSuperIO.kext</string>
+				<string>SMCSuperIO.kext</string>
+				<key>Comment</key>
+				<string>SuperIO</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/SMCSuperIO</string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -293,31 +311,11 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>IntelMausiEthernet.kext</string>
+				<string>IntelMausi.kext</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IntelMausiEthernet</string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>IOElectrify.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/IOElectrify</string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>NVMeFix.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/NVMeFix</string>
+				<string>Contents/MacOS/IntelMausi</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -416,7 +414,7 @@
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data></data>
 				<key>Identifier</key>
@@ -449,8 +447,16 @@
 		<dict>
 			<key>HibernateMode</key>
 			<string>None</string>
+			<key>HideAuxiliary</key>
+			<true/>
+			<key>PickerAttributes</key>
+			<integer>1</integer>
 			<key>PickerMode</key>
 			<string>Builtin</string>
+			<key>PollAppleHotKeys</key>
+			<true/>
+			<key>TakeoffDelay</key>
+			<integer>0</integer>
 			<key>ShowPicker</key>
 			<true/>
 			<key>Timeout</key>
@@ -462,13 +468,70 @@
 			<true/>
 			<key>AllowSetDefault</key>
 			<true/>
+			<key>ApECID</key>
+			<integer>0</integer>
+			<key>AuthRestart</key>
+			<false/>
+			<key>BootProtect</key>
+			<string>Bootstrap</string>
+			<key>DmgLoading</key>
+			<string>Signed</string>
 			<key>ExposeSensitiveData</key>
 			<integer>11</integer>
+			<key>HaltLevel</key>
+			<integer>2147483648</integer>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
+			<key>SecureBootModel</key>
+			<string>Disabled</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
+		<key>Tools</key>
+		<array>
+			<dict>
+				<key>Arguments</key>
+				<string>Shutdown</string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>Perform shutdown</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>Shutdown</string>
+				<key>Path</key>
+				<string>ResetSystem.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>1</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>UEFI Shell</string>
+				<key>Path</key>
+				<string>OpenShell.efi</string>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<true/>
+				<key>Comment</key>
+				<string>1</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Name</key>
+				<string>CleanNvram</string>
+				<key>Path</key>
+				<string>CleanNvram.efi</string>
+			</dict>
+		</array>
 	</dict>
 	<key>NVRAM</key>
 	<dict>
@@ -484,15 +547,25 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>slide=1 agdpmod=pikera -v</string>
+				<string>-v darkwake=0 slide=1 agdpmod=pikera igfxfw=2</string>
+				<key>booter-fileset-basesystem</key>
+				<data>AA==</data>
+				<key>booter-fileset-kernel</key>
+				<data>AA==</data>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
 				<data>emgtSGFuczoyNTI=</data>
+				<key>run-efi-updater</key>
+				<string>No</string>
 			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict>
+			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+			<array>
+				<string>rtc-blacklist</string>
+			</array>
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<array>
 				<string>UIScale</string>
@@ -504,7 +577,7 @@
 			</array>
 		</dict>
 		<key>WriteFlash</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -582,8 +655,12 @@
 			<key>ProvideEarlyConsole</key>
 			<true/>
 		</dict>
-		<key>Protocols</key>
+		<key>ProtocolOverrides</key>
 		<dict>
+			<key>AppleSecureBoot</key>
+			<false/>
+			<key>AppleImg4Verification</key>
+			<false/>
 			<key>AppleSmcIo</key>
 			<true/>
 		</dict>

@@ -1,21 +1,18 @@
-# ASRock-Z390-Phantom-Gaming-ITXac-OpenCore-Hackintosh
-
-
-### 支持macOS Big Sur由于电脑不在身边未测试，更新系统时请备份（文件来自笔记本移植，笔记本已经支持ota到macOS Big beta2）
+# ASRock Z390 Phantom Gaming- ITX/ac-OpenCore-Hackintosh
 
 
 ## 电脑配置
 |规格 | 详细信息|
 |:-: | :-:|
 |主板型号| ASRock Z390 Phantom Gaming-ITX/ac |
-|操作系统|macOS Catalina 10.15.x |
-|处理器|英特尔 酷睿 i9-9900k|
-|内存|芝奇 16GBx2 3200Mhz C16|
+|操作系统| macOS Big Sur |
+|处理器| 英特尔 酷睿i9 9900k |
+|内存| 芝奇 16GBx2 3200Mhz C16 |
 |硬盘| 西数 SN750 1T |
 |显卡| XFX Radeon VII |
-|显示器|优派 VX2780-4K-ZERO|
-|声卡| Realtek ALC1220|
-|网卡| 94360CS2|
+|显示器| 优派 VX2780-4K-ZERO |
+|声卡| Realtek ALC1220 |
+|网卡| 94360CS2 |
 
 ## 使用说明
 
