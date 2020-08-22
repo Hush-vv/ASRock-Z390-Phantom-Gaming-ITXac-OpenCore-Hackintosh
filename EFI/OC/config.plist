@@ -32,13 +32,13 @@
 			</dict>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-XHC-USB.aml</string>
 			</dict>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-DTPG.aml</string>
 			</dict>
@@ -50,9 +50,15 @@
 			</dict>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-TbtOnPch_PINI.aml</string>
+			</dict>
+			<dict>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-XHC-TbtTypeC.aml</string>
 			</dict>
 		</array>
 		<key>Patch</key>
@@ -142,7 +148,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X0UyQw==</data>
 				<key>Limit</key>
@@ -183,7 +189,7 @@
 				<key>Comment</key>
 				<string>Drop TbtTypeC</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>TableLength</key>
 				<integer>5346</integer>
 				<key>TableSignature</key>
@@ -448,7 +454,7 @@
 			<key>HibernateMode</key>
 			<string>None</string>
 			<key>HideAuxiliary</key>
-			<true/>
+			<false/>
 			<key>PickerAttributes</key>
 			<integer>1</integer>
 			<key>PickerMode</key>
@@ -547,8 +553,8 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>-v darkwake=0 slide=1 agdpmod=pikera igfxfw=2</string>
-				<key>booter-fileset-basesystem</key>
+				<string>darkwake=0 slide=1 agdpmod=pikera igfxfw=2 -v</string>
+				<key>booter-fileset-basesystem - 2</key>
 				<data>AA==</data>
 				<key>booter-fileset-kernel</key>
 				<data>AA==</data>
@@ -613,6 +619,8 @@
 		<dict>
 			<key>EnableJumpstart</key>
 			<true/>
+			<key>GlobalConnect</key>
+			<false/>
 			<key>HideVerbose</key>
 			<true/>
 			<key>JumpstartHotPlug</key>
@@ -650,10 +658,14 @@
 		</dict>
 		<key>Output</key>
 		<dict>
+			<key>ConsoleMode</key>
+			<string>Max</string>
 			<key>ProvideConsoleGop</key>
 			<true/>
-			<key>ProvideEarlyConsole</key>
-			<true/>
+			<key>Resolution</key>
+			<string>Max</string>
+			<key>TextRenderer</key>
+			<string>BuiltinGraphics</string>
 		</dict>
 		<key>ProtocolOverrides</key>
 		<dict>
