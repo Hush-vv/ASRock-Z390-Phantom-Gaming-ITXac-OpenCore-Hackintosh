@@ -32,7 +32,7 @@
   Support : Enabled~~
   
   - ~~Advanced \ Advancedl Intel (R) Thunderbo1t → Thunderbolt Usb Support
- : Enabled ~~ 
+ : Enabled~~
   
   - 没有的选项跳过即可
     
@@ -42,7 +42,7 @@
   - ~~`ACPI`-`Add`-`ltem6`-`Enabled`=`YES`或者`ACPI`-`Add`-`ltem7`-`Enabled`=`YES`~~
   - ~~`ACPI`-`Patch`-`ltem3`-`Enabled`=`YES`~~
     
-  - ~~详细驱动教程请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/) ~~
+  - ~~详细驱动教程请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/)~~
   - ~~存在的问题：睡眠唤醒失败电脑自动重启提示`thunderbolt power on failed` （AMD 5000系列与VII睡眠唤醒失败自动重启，驱动雷电3需要放弃睡眠）~~
 
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是定制USB并包括TypeC端口（需开机前插入）
