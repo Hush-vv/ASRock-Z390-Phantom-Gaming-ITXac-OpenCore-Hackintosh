@@ -46,7 +46,8 @@
   - ~~存在的问题：睡眠唤醒失败电脑自动重启提示`thunderbolt power on failed` （AMD 5000系列与VII睡眠唤醒失败自动重启，驱动雷电3需要放弃睡眠）~~
 
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是定制USB并包括TypeC端口（需开机前插入）
-
+  - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
+  
 ### `fangf`大佬的EFI
  
   - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
