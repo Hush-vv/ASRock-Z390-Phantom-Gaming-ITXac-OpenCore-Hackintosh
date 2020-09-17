@@ -36,7 +36,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-PLUG.aml</string>
+				<string>SSDT-PLUG-_SB.PR00.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -74,7 +74,7 @@
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-XHC-TbtTypeC.aml</string>
 			</dict>
@@ -99,7 +99,7 @@
 				<key>Comment</key>
 				<string>Drop TbtTypeC</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>TableLength</key>
 				<integer>5346</integer>
 				<key>TableSignature</key>
