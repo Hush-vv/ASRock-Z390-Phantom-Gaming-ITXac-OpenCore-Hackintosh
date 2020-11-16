@@ -32,17 +32,17 @@
 
   - 刷入BIOS`V4.40C`按照下图设置 `BIOS`
 
-![BIOS](Docs/IMG_2487.jpeg)
+  - ![BIOS](Docs/IMG_2487.jpeg)
 
   - 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
 
   - 打开IOJones搜索rp21 查看reg。如果是dc选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI.aml，如果是D8就选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI_D8.aml
 
-![IOJones](Docs/IMG_2488.png)
+  - ![IOJones](Docs/IMG_2488.png)
 
   - 添加布丁`_E2C` 重命名为`XE2C`
  
- ![添加布丁](Docs/IMG_2489.png)
+  -  ![添加布丁](Docs/IMG_2489.png)
  
   - 重启成功驱动！
 
