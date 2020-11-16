@@ -45,8 +45,8 @@
   -  ![添加布丁](Docs/IMG_2489.png)
  
   - 重启成功驱动！
-
-![TB3](Docs/IMG_2490.png)
+  
+  - ![TB3](Docs/IMG_2490.png)
 
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入，如果驱动了TB3无需使用）
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
