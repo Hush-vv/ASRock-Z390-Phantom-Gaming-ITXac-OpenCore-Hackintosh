@@ -18,7 +18,7 @@
 
 ### BIOS设置
 
-- BIOS版本：~~V4.40C~~ V4.40
+- BIOS版本：V4.40C
 
   - Advanced \ Chipset Configuration → Vt-d : Disabled
 
@@ -27,21 +27,24 @@
   - Advanced \ Chipset Configuration → Share Memory : 128MB（使用`Pro`机型请关闭）
 
   - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled（使用`Pro`机型请关闭）
-  
-  - ~~Advanced \ Advancedl Intel (R) Thunderbo1t → Thunderbolt (TM)
-  Support : Enabled~~
-  
-  - ~~Advanced \ Advancedl Intel (R) Thunderbo1t → Thunderbolt Usb Support
- : Enabled~~
-  
-  - 没有的选项跳过即可
     
-- ~~驱动 `TB3`接口支持热拔插教程~~
-    
-  - ~~详细驱动教程请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/)~~
-  - ~~存在的问题：睡眠唤醒失败电脑自动重启提示`thunderbolt power on failed` （AMD 5000系列与VII睡眠唤醒失败自动重启，驱动雷电3需要放弃睡眠）~~
+- 驱动 `TB3`接口支持热拔插教程
 
-- `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入）
+ - 刷入BIOS`V4.40C`按照下图设置 `BIOS`
+
+![BIOS](Docs/IMG_2487.jpeg)
+
+ - 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
+
+ - 打开IOJones搜索rp21 查看reg。如果是dc选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI.aml，如果是D8就选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI_D8.aml
+
+![BIOS](Docs/IMG_2488.png)
+
+ - 重启成功驱动！
+
+![TB3](Docs/IMG_2489.png)
+
+- `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入，如果驱动了TB3无需使用）
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
   
 - `RadeonBoost.kext`支持`AMD 5000系列`、`VEGA56/64`、`Radeon VII`等显卡“优化”，请按需打开
