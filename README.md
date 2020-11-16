@@ -38,11 +38,15 @@
 
  - 打开IOJones搜索rp21 查看reg。如果是dc选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI.aml，如果是D8就选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI_D8.aml
 
-![BIOS](Docs/IMG_2488.png)
+![IOJones](Docs/IMG_2488.png)
 
+ - 添加布丁`_E2C` 重命名为`XE2C`
+ 
+ ![添加布丁](Docs/IMG_2489.png)
+ 
  - 重启成功驱动！
 
-![TB3](Docs/IMG_2489.png)
+![TB3](Docs/IMG_2490.png)
 
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入，如果驱动了TB3无需使用）
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
