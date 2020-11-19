@@ -56,9 +56,9 @@
   
 - 其它设置
   
- ![其它设置1](Docs/MG_2493.jpg)
+ ![其它设置1](Docs/IMG_2493.png)
    
- ![其它设置2](Docs/MG_2494.jpg)
+ ![其它设置2](Docs/IMG_2494.png)
   
 ### `fangf`大佬的EFI
  
