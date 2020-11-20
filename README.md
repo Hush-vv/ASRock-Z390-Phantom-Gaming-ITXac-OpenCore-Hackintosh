@@ -48,6 +48,8 @@
   
   ![TB3](Docs/IMG_2490.png)
 
+  - [固定`域UUID`](https://github.com/Hush-vv/ASRock-Z390-Phantom-Gaming-ITXac-OpenCore-Hackintosh/blob/master/Docs/%E5%9B%BA%E5%AE%9A%60%E5%9F%9FUUID%60.md)
+
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入，如果驱动了TB3无需使用）
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
   
