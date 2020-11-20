@@ -33,6 +33,6 @@ Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 
 - 将上面替换了`域UUID`的复制进`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`中
 
-![HNI0](Docs/IMG_2492.png)
+![固定域UUID后](Docs/IMG_2492.png)
 
 - 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了
