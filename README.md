@@ -53,8 +53,18 @@
 - `SSDT-XHC-USB.aml`定制USB `SSDT-XHC-TbtTypeC.aml`则是TypeC端口（需开机前插入，如果驱动了TB3无需使用）
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
   
-- `RadeonBoost.kext`支持`AMD 5000系列`、`VEGA56/64`、`Radeon VII`等显卡“优化”，请按需打开
-  - `AMD 5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
+- `RadeonBoost.kext`支持下列显卡“优化”，请按需打开。`AMD RX5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
+
+  - RX 5500
+  - RX 5500 XT
+  - RX 5600
+  - RX 5600 XT
+  - RX 5700
+  - RX 5700 XT
+  - Radeon VII
+  - RX480
+  - RX580
+  - RX590
   
 - 其它设置
   
