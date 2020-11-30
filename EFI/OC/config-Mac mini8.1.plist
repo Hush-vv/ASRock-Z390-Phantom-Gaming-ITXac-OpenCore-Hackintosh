@@ -96,6 +96,8 @@
 				<string>Drop XHC</string>
 				<key>Enabled</key>
 				<true/>
+				<key>OemTableId</key>
+				<data></data>
 				<key>TableLength</key>
 				<integer>10576</integer>
 				<key>TableSignature</key>
@@ -108,6 +110,8 @@
 				<string>Drop TbtTypeC</string>
 				<key>Enabled</key>
 				<false/>
+				<key>OemTableId</key>
+				<data></data>
 				<key>TableLength</key>
 				<integer>5346</integer>
 				<key>TableSignature</key>
@@ -118,10 +122,9 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>GPRW to XPRW
-</string>
+				<string>GPRW to XPRW</string>
 				<key>Count</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
