@@ -50,7 +50,57 @@
   
 - `SSDT-TbtOnPch_PINI_D8_Win.aml` or `SSDT-TbtOnPch_PINI_Win.aml`可解决`OpenCore`引导`Windows`时出现蓝屏(`ACPI_BISO_Error`)问题。请按需求替换
 
--  [固定`域UUID`](https://github.com/Hush-vv/ASRock-Z390-Phantom-Gaming-ITXac-OpenCore-Hackintosh/blob/master/Docs/%E5%9B%BA%E5%AE%9A%60%E5%9F%9FUUID%60.md)
+<details>
+<summary> 固定`域UUID` </summary>
+
+- <p>打开`系统报告`查看雷雳总线的`域UUID`将其复制替换到下面的`ToUUID ("989597F1-04F7-4D5C-95F4-30530FC5F2A6")` 中的`989597F1-04F7-4D5C-95F4-30530FC5F2A6`
+
+<p>
+
+```sw
+Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+{
+    If (_OSI ("Darwin"))
+    {
+        Local0 = Package ()
+            {
+            "ThunderboltUUID", 
+            ToUUID ("989597f1-04f7-4d5c-95f4-30530fc5f2a6"), 
+            "sscOffset", 
+            Buffer (0x02)
+            {
+                 0x00, 0x00                                       // ..
+            }, 
+
+            "power-save", 
+            One, 
+            Buffer (One)
+            {
+                 0x00                                             // .
+            }
+        }
+
+```
+</p>
+
+- <p> 使用`MaciASL`打开你使用的`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`另存为`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`找到`HNI0`下的这个位置 </p>
+
+<p>
+
+![HNI0](Docs/IMG_2491.png) 
+
+<p>
+ 
+ - <p> 将上面替换了`域UUID`的复制进`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`中 </p>
+
+<p>
+
+ ![固定域UUID后](Docs/IMG_2492.png) 
+ 
+ <p>
+ 
+ - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
+</details>
 
 - `SSDT-XHC-TbtTypeC.aml`是TypeC端口，需开机前插入（如果使用了`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`无需使用`SSDT-XHC-TbtTypeC.aml`！）。
   - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
