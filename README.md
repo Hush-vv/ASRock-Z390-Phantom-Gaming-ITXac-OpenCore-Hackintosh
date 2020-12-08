@@ -28,25 +28,27 @@
 
   - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
     
-- 驱动 `Thunderbolt 3`接口(缺点`OpenCore`引导`Windows`会出现蓝屏`ACPI_BISO_Error`)
+- 驱动 `Thunderbolt3`接口
 
-  - 刷入BIOS`V4.40C`按照下图设置 `BIOS`
+  - 刷入BIOS`V4.40C`按照下图设置 `Thunderbolt3` 的`BIOS`
 
    ![BIOS](Docs/IMG_2487.jpeg)
 
   - 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
 
-  - 打开IOJones搜索rp21 查看reg。如果是dc选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI.aml，如果是D8就选用SSDT-DTPG.aml + SSDT-TbtOnPch_PINI_D8.aml
+  - 打开IOJones搜索rp21 查看reg。如果是dc选用`SSDT-DTPG.aml `+ `SSDT-TbtOnPch_PINI.aml`，如果是D8就选用`SSDT-DTPG.aml` + `SSDT-TbtOnPch_PINI_D8.aml`
 
  ![IOJones](Docs/IMG_2488.png)
 
-  - 添加布丁`_E2C` 重命名为`XE2C`
+  - 添加布丁`_E2C` to`XE2C`
  
   ![添加布丁](Docs/IMG_2489.png)
  
   - 重启成功驱动！
   
   ![TB3](Docs/IMG_2490.png)
+  
+  - `SSDT-TbtOnPch_PINI_D8_Win.aml` or `SSDT-TbtOnPch_PINI_Win.aml`可解决`OpenCore`引导`Windows`时出现蓝屏(`ACPI_BISO_Error`)问题。请按需求替换
 
   - [固定`域UUID`](https://github.com/Hush-vv/ASRock-Z390-Phantom-Gaming-ITXac-OpenCore-Hackintosh/blob/master/Docs/%E5%9B%BA%E5%AE%9A%60%E5%9F%9FUUID%60.md)
 
@@ -74,9 +76,10 @@
    
  ![其它设置2](Docs/IMG_2494.png)
   
-### `fangf`大佬的EFI
+### 感谢
  
-  - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
+ -  @宪武 大佬
+ - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
   
 
 
