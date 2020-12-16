@@ -13,6 +13,7 @@
 |显示器| 优派 VX2780-4K-ZERO |
 |声卡| Realtek ALC1220 |
 |网卡| 94360CS2 |
+|SMBIOS| iMac 19.1 |
 
 ## 使用说明
 
@@ -102,10 +103,12 @@ Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
  - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
 </details>
 
-- `SSDT-XHC-TbtTypeC.aml`是TypeC端口，需开机前插入（如果使用了`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`无需使用`SSDT-XHC-TbtTypeC.aml`！）。
-  - 使用`SSDT-XHC-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
-
-- 已通过ACPI定制全部USB端口，无需重复定制。
+- 已通过`USBPorts.kext`定制全部USB端口，无需重复定制。
+  - 使用其它`SMBIOS`时请修改`USBPorts.kext`-`Contents`-`Info.plist`
+  ![USBPorts.kext](Docs/IMG_2495.png)
+  
+- `SSDT-XHC2-TbtTypeC.aml`是TypeC端口，需开机前插入（如果使用了`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`无需使用`SSDT-XHC2-TbtTypeC.aml`！）。
+  - 使用`SSDT-XHC2-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
 
 - `RadeonBoost.kext`支持下列显卡“优化”，请按需打开。`AMD RX5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
 
