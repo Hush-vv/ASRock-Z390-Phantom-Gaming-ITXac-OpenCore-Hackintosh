@@ -5,7 +5,7 @@
 |规格 | 详细信息|
 |:-: | :-:|
 |主板型号| ASRock Z390 Phantom Gaming-ITX/ac |
-|操作系统| macOS Big Sur 11.1（20C5061b） |
+|操作系统| macOS Big Sur 11.1（20C69） |
 |处理器| 英特尔 酷睿i9 9900k |
 |内存| 芝奇 16GBx2 3200Mhz C16 |
 |硬盘| 西数 SN750 1T |
