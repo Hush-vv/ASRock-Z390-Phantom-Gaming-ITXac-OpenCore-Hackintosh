@@ -105,6 +105,7 @@ Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 
 - 已通过`USBPorts.kext`定制全部USB端口，无需重复定制。
   - 使用其它`SMBIOS`时请修改`USBPorts.kext`-`Contents`-`Info.plist`
+  
   ![USBPorts.kext](Docs/IMG_2495.png)
   
 - `SSDT-XHC2-TbtTypeC.aml`是TypeC端口，需开机前插入（如果使用了`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`无需使用`SSDT-XHC2-TbtTypeC.aml`！）。
