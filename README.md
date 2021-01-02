@@ -49,7 +49,6 @@
   
   ![TB3](Docs/IMG_2490.png)
   
-- `SSDT-TbtOnPch_PINI_D8_Win.aml` or `SSDT-TbtOnPch_PINI_Win.aml`可解决`OpenCore`引导`Windows`时出现蓝屏(`ACPI_BISO_Error`)问题。请按需求替换
 
 <details>
 <summary> 固定`域UUID` </summary>
