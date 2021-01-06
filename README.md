@@ -28,108 +28,108 @@
   - Advanced \ Chipset Configuration → Share Memory : 128MB
 
   - Advanced \ Chipset Configuration → IGPU Multi-Monitor : Enabled
-    
-### 驱动 `Thunderbolt3`接口
-
-- 刷入BIOS`V4.40C`按照下图设置 `Thunderbolt3` 的`BIOS`
-
-   ![BIOS](Docs/IMG_2487.jpeg)
-
-- 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
-
-- 打开IOJones搜索rp21 查看reg。如果是dc选用`SSDT-DTPG.aml `+ `SSDT-TbtOnPch_PINI.aml`，如果是D8就选用`SSDT-DTPG.aml` + `SSDT-TbtOnPch_PINI_D8.aml`
-
- ![IOJones](Docs/IMG_2488.png)
-
-- 添加布丁`_E2C` to`XE2C`
- 
-  ![添加布丁](Docs/IMG_2489.png)
- 
-- 重启成功驱动！
   
-  ![TB3](Docs/IMG_2490.png)
-  
-
-<details>
-<summary> 固定`域UUID` </summary>
-
-- <p>打开`系统报告`查看雷雳总线的`域UUID`将其复制替换到下面的`ToUUID ("989597F1-04F7-4D5C-95F4-30530FC5F2A6")` 中的`989597F1-04F7-4D5C-95F4-30530FC5F2A6`
-
-<p>
-
-```sw
-Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-{
-    If (_OSI ("Darwin"))
-    {
-        Local0 = Package ()
-            {
-            "ThunderboltUUID", 
-            ToUUID ("989597f1-04f7-4d5c-95f4-30530fc5f2a6"), 
-            "sscOffset", 
-            Buffer (0x02)
-            {
-                 0x00, 0x00                                       // ..
-            }, 
-
-            "power-save", 
-            One, 
-            Buffer (One)
-            {
-                 0x00                                             // .
-            }
-        }
-
-```
-</p>
-
-- <p> 使用`MaciASL`打开你使用的`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`另存为`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`找到`HNI0`下的这个位置 </p>
-
-<p>
-
-![HNI0](Docs/IMG_2491.png) 
-
-<p>
- 
- - <p> 将上面替换了`域UUID`的复制进`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`中 </p>
-
-<p>
-
- ![固定域UUID后](Docs/IMG_2492.png) 
- 
- <p>
- 
- - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
-</details>
+### 其它设置
 
 - 已通过`USBPorts.kext`定制全部USB端口，无需重复定制。
   - 使用其它`SMBIOS`时请修改`USBPorts.kext`-`Contents`-`Info.plist`
   
   ![USBPorts.kext](Docs/IMG_2495.png)
   
-- `SSDT-XHC2-TbtTypeC.aml`是TypeC端口，需开机前插入（如果使用了`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`无需使用`SSDT-XHC2-TbtTypeC.aml`！）。
+- `SSDT-XHC2-TbtTypeC.aml`可将主板上的 `Thunderbolt3`端口当做`TypeC`端口使用（驱动 `Thunderbolt3`时无需使用`SSDT-XHC2-TbtTypeC.aml`！）
   - 使用`SSDT-XHC2-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
+ 
+ - `RadeonBoost.kext`支持下列显卡“优化”，请按需打开。`AMD RX5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
 
-- `RadeonBoost.kext`支持下列显卡“优化”，请按需打开。`AMD RX5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
+   - RX 5500
+   - RX 5500 XT
+   - RX 5600
+   - RX 5600 XT
+   - RX 5700
+   - RX 5700 XT
+   - Radeon VII
+   - RX480
+   - RX580
+   - RX590 
+  
+  ![其它设置1](Docs/IMG_2493.png)
+    
+  ![其它设置2](Docs/IMG_2494.png)
 
-  - RX 5500
-  - RX 5500 XT
-  - RX 5600
-  - RX 5600 XT
-  - RX 5700
-  - RX 5700 XT
-  - Radeon VII
-  - RX480
-  - RX580
-  - RX590
-  
-### 其它设置
-  
- ![其它设置1](Docs/IMG_2493.png)
+### 驱动 `Thunderbolt3`接口
+
+  - 刷入BIOS`V4.40C`按照下图设置 `Thunderbolt3` 的`BIOS`
+
+     ![BIOS](Docs/IMG_2487.jpeg)
+
+  - 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
+
+  - 打开IOJones搜索rp21 查看reg。如果是dc选用`SSDT-DTPG.aml `+ `SSDT-TbtOnPch_PINI.aml`，如果是D8就选用`SSDT-DTPG.aml` + `SSDT-TbtOnPch_PINI_D8.aml`
+
+   ![IOJones](Docs/IMG_2488.png)
+
+  - 添加布丁`_E2C` to`XE2C`
    
- ![其它设置2](Docs/IMG_2494.png)
+    ![添加布丁](Docs/IMG_2489.png)
+   
+  - 重启成功驱动！
+    
+    ![TB3](Docs/IMG_2490.png)
+    
+
+  <details>
+  <summary> 固定`域UUID` </summary>
+
+  - <p>打开`系统报告`查看雷雳总线的`域UUID`将其复制替换到下面的`ToUUID ("989597F1-04F7-4D5C-95F4-30530FC5F2A6")` 中的`989597F1-04F7-4D5C-95F4-30530FC5F2A6`
+
+  <p>
+
+  ```sw
+  Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+  {
+      If (_OSI ("Darwin"))
+      {
+          Local0 = Package ()
+              {
+              "ThunderboltUUID", 
+              ToUUID ("989597f1-04f7-4d5c-95f4-30530fc5f2a6"), 
+              "sscOffset", 
+              Buffer (0x02)
+              {
+                   0x00, 0x00                                       // ..
+              }, 
+
+              "power-save", 
+              One, 
+              Buffer (One)
+              {
+                   0x00                                             // .
+              }
+          }
+
+  ```
+  </p>
+
+  - <p> 使用`MaciASL`打开你使用的`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`另存为`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`找到`HNI0`下的这个位置 </p>
+
+  <p>
+
+  ![HNI0](Docs/IMG_2491.png) 
+
+  <p>
+   
+   - <p> 将上面替换了`域UUID`的复制进`SSDT-TbtOnPch_PINI_D8.dsl` or `SSDT-TbtOnPch_PINI.dsl`中 </p>
+
+  <p>
+
+   ![固定域UUID后](Docs/IMG_2492.png) 
+   
+   <p>
+   
+   - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
+  </details>
   
-### 感谢
+## 感谢
  
  -  @宪武 大佬
  - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
