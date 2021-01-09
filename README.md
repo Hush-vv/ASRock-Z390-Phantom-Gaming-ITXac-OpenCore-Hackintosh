@@ -129,10 +129,14 @@
    - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
   </details>
   
+### OpenCore  Mod
+
+- ACPI补丁可设置全局还是只对于MACOS生效，(将ACPI-> Quirks-> EnableForAll设置为yes为全局影响)（默认为no
+
+- 引导程序Quirks修改为仅适用于macOS，而不影响其他非MACOS系统。
+  
 ## 感谢
  
  -  @宪武 大佬
  - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
-  
-
-
+ - @btwise  
