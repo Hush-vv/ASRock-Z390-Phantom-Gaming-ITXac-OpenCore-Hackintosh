@@ -5,7 +5,7 @@
 |规格 | 详细信息|
 |:-: | :-:|
 |主板型号| ASRock Z390 Phantom Gaming-ITX/ac |
-|操作系统| macOS Big Sur 11.2 Beta版（20D5029f） |
+|操作系统| macOS Big Sur 11.2 Beta版(20D5042d) |
 |处理器| 英特尔 酷睿i9 9900k |
 |内存| 芝奇 16GBx2 3200Mhz C16 |
 |硬盘| 西数 SN750 1T |
@@ -19,7 +19,7 @@
 
 ### BIOS设置
 
-- BIOS版本：V4.40C
+- BIOS版本：V4.40
 
   - Advanced \ Chipset Configuration → Vt-d : Disabled
 
@@ -129,9 +129,9 @@
    - <p> 编译确认没有警告后另存为`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`然后放入`EFI`中加载。这样每次启动后`域UUID`值就不会改变了</p>
   </details>
   
-### OpenCore  Mod
+## OpenCore  Mod
 
-- ACPI补丁可设置全局还是只对于MACOS生效，(将ACPI-> Quirks-> EnableForAll设置为yes为全局影响)（默认为no
+- ACPI补丁可设置全局还是只对于MACOS生效，将ACPI-> Quirks-> EnableForAll设置为yes为全局影响（默认为no）
 
 - 引导程序Quirks修改为仅适用于macOS，而不影响其他非MACOS系统。
   
