@@ -36,9 +36,10 @@
   
   ![USBPorts.kext](Docs/IMG_2495.png)
   
-- `SSDT-XHC2-TbtTypeC.aml`可将主板上的 `Thunderbolt3`端口当做`TypeC`端口使用（驱动 `Thunderbolt3`时无需使用`SSDT-XHC2-TbtTypeC.aml`！）
+- `SSDT-XHC2-TbtTypeC.aml`可将主板上的 `Thunderbolt3`接口当做`TypeC`接口使用
   - 使用`SSDT-XHC2-TbtTypeC.aml`时需要`ACPI`-`Delete`-`ltem1`-`Enabled`=`YES`
- 
+  - 驱动 `Thunderbolt3`时无需使用`SSDT-XHC2-TbtTypeC.aml`
+  
  - `RadeonBoost.kext`支持下列显卡“优化”，请按需打开。`AMD RX5000系列`请自行在`boot-args`处添加`agdpmod=pikera`
 
    - RX 5500
@@ -76,6 +77,7 @@
     
     ![TB3](Docs/IMG_2490.png)
     
+  - 如需更新`雷电`固件请参考 [华擎ASRock Z390 Phantom Gaming ITX/ac 雷电3 完美驱动 热插拔](https://fangf.cc/2020/05/19/TB3/)
 
   <details>
   <summary> 固定`域UUID` </summary>
