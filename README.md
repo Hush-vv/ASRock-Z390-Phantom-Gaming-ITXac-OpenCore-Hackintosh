@@ -5,7 +5,7 @@
 |规格 | 详细信息|
 |:-: | :-:|
 |主板型号| ASRock Z390 Phantom Gaming-ITX/ac |
-|操作系统| macOS Big Sur 11.2 Beta版(20D5042d) |
+|操作系统| macOS Big Sur 11.2 (20D62) |
 |处理器| 英特尔 酷睿i9 9900k |
 |内存| 芝奇 16GBx2 3200Mhz C16 |
 |硬盘| 西数 SN750 1T |
@@ -56,7 +56,11 @@
   ![其它设置1](Docs/IMG_2493.png)
     
   ![其它设置2](Docs/IMG_2494.png)
+  
+### 唤醒方法
 
+- 电源键
+  
 ### 驱动 `Thunderbolt3`接口
 
   - 刷入BIOS`V4.40C`按照下图设置 `Thunderbolt3` 的`BIOS`
@@ -142,3 +146,4 @@
  -  @宪武 大佬
  - [fangf2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh)
  - @btwise  
+ - [OC-little](https://github.com/daliansky/OC-little)的所有贡献者
