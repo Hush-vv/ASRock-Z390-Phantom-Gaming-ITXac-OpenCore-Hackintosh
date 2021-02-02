@@ -65,7 +65,7 @@
 
   - 刷入BIOS`V4.40C`按照下图设置 `Thunderbolt3` 的`BIOS`
 
-     ![BIOS](Docs/IMG_2487.jpeg)
+     ![BIOS](Docs/IMG_2487.png)
 
   - 添加SSDT，`SSDT-DTPG.aml` （必须）`SSDT-TbtOnPch_PINI_D8.aml` or `SSDT-TbtOnPch_PINI.aml`
 
